@@ -1,0 +1,22 @@
+﻿@model List<Coche>
+
+<h1 style="color:blue">
+    Favoritos
+</h1>
+
+@if(Model != null)
+{
+    @foreach(Coche car in Model)
+    {
+        <div>
+            <h1>@car.Marca</h1>
+            <h2>@car.Modelo</h2>
+            <a asp-controller="Coches" asp-action="DeleteFavorito" asp-route-id="@car.IdCoche">
+                Delete
+            </a>
+        </div>
+    }
+} else
+{
+    <h1 style="color:red"></h1>
+}
